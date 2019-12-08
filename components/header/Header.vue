@@ -4,7 +4,7 @@
       <div class="header__inner">
         <AppLogo />
         <Navigation />
-        <Btn>Contact us</Btn>
+        <MainButton>Contact us</MainButton>
       </div>
     </div>
   </header>
@@ -13,14 +13,12 @@
 <script>
 import AppLogo from '@/components/AppLogo.vue'
 import Navigation from '@/components/navigation/Navigation.vue'
-import Btn from '@/components/general/buttons/Btn.vue'
 
 export default {
   name: 'Header',
   components: {
     AppLogo,
-    Navigation,
-    Btn
+    Navigation
   }
 }
 </script>

@@ -1,0 +1,20 @@
+.main-title {
+  font-size: 144px;
+  line-height: 1;
+  text-transform: uppercase;
+  font-family: $secondary-font-bold;
+}
+
+.text {
+  &--transparent {
+    color: $secondary-text-color
+  }
+
+  &--dark {
+    color: $dark-color
+  }
+
+  &--white {
+    color: #fff;
+  }
+}

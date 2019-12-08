@@ -2,7 +2,7 @@
     <ul class="social-media">
       <li
         v-for="socialItem in socialList"
-        :key="socialItem"
+        :key="socialItem.name"
         class="social-media__item"
       >
         <a :href="socialItem.link" class="social-media__link">

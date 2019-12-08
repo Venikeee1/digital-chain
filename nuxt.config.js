@@ -13,13 +13,13 @@ module.exports = {
   css: ['~assets/style/index.scss'],
   modules: ['@nuxtjs/style-resources'],
   styleResources: {
-    // your settings here
     scss: [
       '~assets/style/variables/index.scss',
       '~assets/style/mixins/index.scss'
     ]
   },
   loading: { color: '#3B8070' },
+  plugins: ['~/plugins/global.js'],
   build: {
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {

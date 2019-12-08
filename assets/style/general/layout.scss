@@ -1,6 +1,113 @@
+$break-points:
+  1 'xs' 0,
+  2 'sm' $xs,
+  3 'md' $sm,
+  4 'lg' $md,
+  5 'xl' $lg,
+  6 'xxl' $xl;
+
+$grid-columns: 12;
+$columns-k: 100 / 12;
+
+.m-auto {
+  margin: auto;
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .container {
   max-width: 1366px;
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
   width: 100%;
   padding: 0 15px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-block {
+  display: block;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+   justify-content: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+@each $index, $key, $value in $break-points {
+  .justify-end-#{$key} {
+    @media (min-width: #{$value}) {
+      justify-content: flex-end;
+    }
+  }
+
+  .justify-start-#{$key} {
+    @media (min-width: #{$value}) {
+      justify-content: flex-start;
+    }
+  }
+
+  .justify-between-#{$key} {
+    @media (min-width: #{$value}) {
+      justify-content: between;
+    }
+  }
+
+  .justify-center-#{$key} {
+    @media (min-width: #{$value}) {
+      justify-content: center;
+    }
+  }
+}
+
+@each $index, $key, $value in $break-points {
+  .d-flex-#{$key} {
+    @media (min-width: #{$value}) {
+      display: flex;
+    }
+  }
+
+  .d-block-#{$key} {
+    @media (min-width: #{$value}) {
+      display: block;
+    }
+  }
+}
+
+@each $i, $key, $value in $break-points {
+  @for $index from 1 to 12 {
+    .col-#{$key}-#{$index} {
+      @media (min-width: $value) {
+        width: $index * $columns-k + 0%;
+      }
+    }
+  }
 }

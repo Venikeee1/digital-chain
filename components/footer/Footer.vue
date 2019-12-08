@@ -29,6 +29,7 @@ export default {
 
   .footer {
     padding: 30px 0 60px;
+    flex: 0;
 
     &__inner {
       display: flex;

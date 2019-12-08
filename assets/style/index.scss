@@ -1,6 +1,7 @@
-@import "./general/index";
 @import "./variables/index";
 @import "./mixins/index";
+@import "./general/index";
+@import "./fonts/fonts-list";
 
 *, *:before, *:after {
   box-sizing: border-box;
@@ -16,4 +17,9 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+}
+
+body {
+  color: $secondary-text-color;
+  font-family: $main-font-regular, sans-serif;
 }
