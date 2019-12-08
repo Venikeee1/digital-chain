@@ -4,7 +4,7 @@
       <Header />
       <IntroSection />
       <AdvantageSection />
-      <BusinessExperience />
+      <BusinessExperienceSection />
     </div>
     <Footer />
   </div>
@@ -15,7 +15,7 @@ import Header from '@/components/header/Header.vue'
 import Footer from '@/components/footer/Footer.vue'
 import IntroSection from '@/components/homepage/IntroSection.vue'
 import AdvantageSection from '@/components/homepage/advantage-section/AdvantageSection.vue'
-import BusinessExperience from '@/components/homepage/business-experience/BusinessExperience.vue'
+import BusinessExperienceSection from '@/components/homepage/business-experience/BusinessExperienceSection.vue'
 
 export default {
   components: {
@@ -23,7 +23,7 @@ export default {
     Footer,
     IntroSection,
     AdvantageSection,
-    BusinessExperience
+    BusinessExperienceSection
   }
 }
 </script>
