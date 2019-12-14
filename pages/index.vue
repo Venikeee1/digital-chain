@@ -5,6 +5,7 @@
       <IntroSection />
       <AdvantageSection />
       <BusinessExperienceSection />
+      <ContactUsSection />
     </div>
     <Footer />
   </div>
@@ -16,6 +17,7 @@ import Footer from '@/components/footer/Footer.vue'
 import IntroSection from '@/components/homepage/IntroSection.vue'
 import AdvantageSection from '@/components/homepage/advantage-section/AdvantageSection.vue'
 import BusinessExperienceSection from '@/components/homepage/business-experience/BusinessExperienceSection.vue'
+import ContactUsSection from '@/components/contact-form/ContactUsSection'
 
 export default {
   components: {
@@ -23,7 +25,8 @@ export default {
     Footer,
     IntroSection,
     AdvantageSection,
-    BusinessExperienceSection
+    BusinessExperienceSection,
+    ContactUsSection
   }
 }
 </script>
