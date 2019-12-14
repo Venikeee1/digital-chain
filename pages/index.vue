@@ -5,6 +5,9 @@
       <IntroSection />
       <AdvantageSection />
       <BusinessExperienceSection />
+      <WorksSection />
+      <PartnersSection />
+      <AwardsSection />
     </div>
     <Footer />
   </div>
@@ -16,6 +19,9 @@ import Footer from '@/components/footer/Footer.vue'
 import IntroSection from '@/components/homepage/IntroSection.vue'
 import AdvantageSection from '@/components/homepage/advantage-section/AdvantageSection.vue'
 import BusinessExperienceSection from '@/components/homepage/business-experience/BusinessExperienceSection.vue'
+import AwardsSection from '@/components/homepage/awards/AwardsSection.vue'
+import PartnersSection from '@/components/homepage/partners-section/PartnersSection.vue'
+import WorksSection from '@/components/homepage/works-section/WorksSection.vue'
 
 export default {
   components: {
@@ -23,7 +29,10 @@ export default {
     Footer,
     IntroSection,
     AdvantageSection,
-    BusinessExperienceSection
+    BusinessExperienceSection,
+    AwardsSection,
+    PartnersSection,
+    WorksSection
   }
 }
 </script>

@@ -6,7 +6,7 @@
         <SecondaryTitle :text="sectionData.title" />
         <div class="business-experience__img"></div>
       </div>
-      <BusinessExperienceList/>
+      <BusinessExperienceList />
     </div>
   </div>
 </section>

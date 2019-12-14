@@ -17,7 +17,7 @@ export default {
   name: 'AdvantageDescription',
   data () {
     return {
-      advantageData
+      advantageData: advantageData
     }
   }
 }

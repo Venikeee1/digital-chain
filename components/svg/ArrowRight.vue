@@ -1,0 +1,15 @@
+<template>
+  <svg width="20" height="32" viewBox="0 0 20 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3.004 31.4488L19.4646 16.0425L3.004 0.63623L0.946777 2.56168L15.3502 16.0425L0.946777 29.5234L3.004 31.4488Z"/>
+  </svg>
+</template>
+
+<script>
+    export default {
+        name: "ArrowRight"
+    }
+</script>
+
+<style scoped>
+
+</style>

@@ -24,7 +24,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .secondary-title {
     font-size: 62px;
     line-height: 1.2;

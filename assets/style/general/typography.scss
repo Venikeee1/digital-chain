@@ -5,7 +5,17 @@
   font-family: $secondary-font-bold;
 }
 
+.secondary-title {
+  font-size: 120px;
+}
+
 .text {
+  line-height: 1.8;
+
+  &--center {
+    text-align: center;
+  }
+
   &--transparent {
     color: $secondary-text-color
   }
