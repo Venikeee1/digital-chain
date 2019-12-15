@@ -9,6 +9,7 @@
       <SolutionSection />
       <PartnersSection />
       <AwardsSection />
+      <ContactUsSection />
     </div>
     <Footer />
   </div>
@@ -20,6 +21,7 @@ import Footer from '@/components/footer/Footer.vue'
 import IntroSection from '@/components/homepage/intro-section/IntroSection.vue'
 import AdvantageSection from '@/components/homepage/advantage-section/AdvantageSection.vue'
 import BusinessExperienceSection from '@/components/homepage/business-experience/BusinessExperienceSection.vue'
+import ContactUsSection from '@/components/contact-form/ContactUsSection'
 import AwardsSection from '@/components/homepage/awards-section/AwardsSection.vue'
 import PartnersSection from '@/components/homepage/partners-section/PartnersSection.vue'
 import WorksSection from '@/components/homepage/works-section/WorksSection.vue'
@@ -31,11 +33,12 @@ export default {
     Footer,
     IntroSection,
     AdvantageSection,
-    BusinessExperienceSection,
     AwardsSection,
     PartnersSection,
     WorksSection,
-    SolutionSection
+    SolutionSection,
+    BusinessExperienceSection,
+    ContactUsSection
   }
 }
 </script>
