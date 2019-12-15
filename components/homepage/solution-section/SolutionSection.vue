@@ -43,19 +43,19 @@
 <script>
 import Swiper from '@/components/swiper/Swiper'
 import SwiperSlide from '@/components/swiper/SwiperSlide'
-import ControlsNextPrev from '@/components/ControlsNextPrev/ControlsNextPrev'
+import ControlsNextPrev from '@/components/controls-next-prev/ControlsNextPrev'
 import SolutionDetails from './SolutionDetails'
 
 const solutionList = [
   {
     title: 'Media',
     description: 'We create outstanding media campaigns: From market analysis and planning to implementation, support and monitoring of their<br> effectiveness after launch.',
-    imgUrl: '/img/solutions/shape-1.png'
+    imgUrl: '/digital-preview/img/solutions/shape-1.png'
   },
   {
     title: 'Media',
     description: 'We create outstanding media campaigns: From market analysis and planning to implementation, support and monitoring of their<br> effectiveness after launch.',
-    imgUrl: '/img/solutions/shape-2.png'
+    imgUrl: '/digital-preview/img/solutions/shape-2.png'
   }
 ]
 export default {

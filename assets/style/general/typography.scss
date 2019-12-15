@@ -3,10 +3,18 @@
   line-height: 1;
   text-transform: uppercase;
   font-family: $secondary-font-bold;
+
+  @media (max-width: 1500px) {
+    font-size: 8vw;
+  }
 }
 
 .secondary-title {
   font-size: 120px;
+
+  @media (max-width: 1500px) {
+    font-size: 5.5vw;
+  }
 }
 
 .text {

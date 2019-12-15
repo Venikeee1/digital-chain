@@ -32,5 +32,9 @@ export default {
     font-family: $secondary-font-bold;
     margin-bottom: 1.2em;
     font-weight: 600;
+
+    @media (max-width: 1500px) {
+      font-size: 4vw;
+    }
   }
 </style>

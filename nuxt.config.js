@@ -1,4 +1,12 @@
+// const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+//
+// } : {}
+
 module.exports = {
+  // uncomment it if you want deploy to gh pages. digital-preview - is name og github project
+  // router: {
+  //   base: '/digital-preview/'
+  // },
   head: {
     title: 'digital-chain',
     meta: [

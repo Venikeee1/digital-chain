@@ -42,7 +42,7 @@
 <script>
 import Swiper from '@/components/swiper/Swiper'
 import SwiperSlide from '@/components/swiper/SwiperSlide'
-import ControlsNextPrev from '@/components/ControlsNextPrev/ControlsNextPrev'
+import ControlsNextPrev from '@/components/controls-next-prev/ControlsNextPrev'
 import WorksDetails from './WorksDetails'
 
 const title = 'Our<br>works'
@@ -52,16 +52,16 @@ const works = [
     services: ' Creative / Media / Strategy cient',
     client: 'Parimatch',
     geo: 'Global',
-    bgSrc: '/img/works/pari-match-bg.jpg',
-    imageSrc: '/img/works/pari-match-img.png'
+    bgSrc: '/digital-preview/img/works/pari-match-bg.jpg',
+    imageSrc: '/digital-preview/img/works/pari-match-img.png'
   },
   {
     title: 'Fired up<br>to win',
     services: ' Creative / Media / Strategy cient',
     client: 'Parimatch',
     geo: 'Global',
-    bgSrc: '/img/works/poker-match-bg.jpg',
-    imageSrc: '/img/works/poker-match-img.png'
+    bgSrc: '/digital-preview/img/works/poker-match-bg.jpg',
+    imageSrc: '/digital-preview/img/works/poker-match-img.png'
   }
 ]
 
@@ -134,6 +134,10 @@ export default {
     height: 100%;
     background: bottom right no-repeat;
     background-size: initial;
+
+    @media (max-width: 1500px) {
+      background-size: contain;
+    }
   }
 
   &__title {

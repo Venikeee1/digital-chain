@@ -10,7 +10,7 @@
   <span
     class="checkbox"
   >
-    <checked v-if="checked"/>
+    <checked v-if="checked" />
   </span>
     <input
       :id="`checkbox-${value}`"

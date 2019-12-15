@@ -26,7 +26,7 @@
 const data = {
   title: 'Our [[partners]]',
   description: 'We do not limit ourselves to certain business lines. We have the experience and professionals to build a custom solution and use multiple services to assist your business.',
-  logoList: ['/img/partners/pari-match.png', '/img/partners/pokerdom.png', '/img/partners/poker-match.png', '/img/partners/binomo.png', '/img/partners/poker-match.png', '/img/partners/pokerdom.png', '/img/partners/pari-match.png']
+  logoList: ['/digital-preview/img/partners/pari-match.png', '/digital-preview/img/partners/pokerdom.png', '/digital-preview/img/partners/poker-match.png', '/digital-preview/img/partners/binomo.png', '/digital-preview/img/partners/poker-match.png', '/digital-preview/img/partners/pokerdom.png', '/digital-preview/img/partners/pari-match.png']
 }
 export default {
   name: 'PartnersSection',

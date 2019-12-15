@@ -4,10 +4,6 @@
 class="label"
 :class="{'checked': checked===value}"
 >
-  <span
-    class="checkbox"
-    :class="{'checked': checked===value}"
-  ></span>
   <input
     :id="`radio-${value}`"
     type="radio"
@@ -16,6 +12,10 @@ class="label"
     class="input"
     @change="handlerChange"
   >
+  <span
+    class="radio"
+    :class="{'checked': checked===value}"
+  ></span>
   <slot></slot>
 </label>
 </template>
@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     handlerChange (e) {
-      this.$emit('change', e.target.value)
+      this.$emit('change', this.checked)
     }
   }
 
@@ -40,25 +40,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.label {
-  border: 1px solid #393939;
-  box-sizing: border-box;
-  border-radius: 20px;
-  padding: 6.86px;
-  display: flex;
-  color: #fff;
-  font-family: 'PFDinTextCondPro-Regular';
-  font-size: 14px;
-}
+  .label {
+    border: 1px solid #393939;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 6.86px;
+    display: flex;
+    color: #fff;
+    font-family: 'PFDinTextCondPro-Regular';
+    font-size: 14px;
+    cursor: pointer;
+  }
+
   .radio {
-    width: 13.72px;
-    height: 13.72px;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
     border: 1px solid #393939;
     box-sizing: border-box;
     position: relative;
     border-radius: 50%;
-    margin-right: 5px;
+    margin-right: 7px;
   }
+
   .radio.checked:before {
     content: '';
     position: absolute;
@@ -73,5 +77,9 @@ export default {
   }
   .input {
     display: none;
+
+    &:checked+.radio {
+      background: #fff;
+    }
   }
 </style>

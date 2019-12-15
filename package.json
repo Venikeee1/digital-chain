@@ -10,7 +10,8 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint:js": "eslint --ext .js --ext .vue src/",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate"
   },
   "dependencies": {
     "nuxt": "^2.0.0",
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@nuxtjs/style-resources": "^1.0.0",
     "babel-eslint": "^10.0.1",
+    "cross-env": "^6.0.3",
     "eslint": "5.16.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-friendly-formatter": "^4.0.1",

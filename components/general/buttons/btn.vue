@@ -4,17 +4,7 @@
     class="btn"
     v-on="$listeners"
   >
-    <svg
-      class="btn__svg"
-      width="131"
-      height="30"
-      viewBox="0 0 131 30"
-      xmlns="http://www.w3.org/2000/svg"
-      preserveAspectRatio="none"
-      fill="none"
-    >
-      <path d="M1.99414 14.9995C1.99414 7.26753 8.26215 0.999512 15.9941 0.999512H115.994C123.726 0.999512 129.994 7.26753 129.994 14.9995C129.994 22.7315 123.726 28.9995 115.994 28.9995H15.9941C8.26216 28.9995 1.99414 22.7315 1.99414 14.9995Z" stroke-width="2" />
-    </svg>
+    <span class="btn__line"></span>
     <slot></slot>
   </button>
 </template>
@@ -44,37 +34,109 @@ export default {
     background: none;
     border-radius: 30px;
     font-size: 14px;
-    padding: 6px 40px;
+    padding: 8px 40px;
     line-height: 1.2;
     cursor: pointer;
     border: none;
 
-    &:hover {
-      .btn__svg {
-        stroke-dasharray: 247px 0;
-      }
-    }
-
-    &__svg {
+    &::before {
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
-      z-index: -1;
-      width: 100%;
+      width: 60%;
       height: 100%;
-      stroke-dasharray: 247px 32px;
-      stroke-dashoffset: 76px;
-      transition: stroke-dasharray 0.4s;
+      border: 2px solid;
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 25px;
+      height: 100%;
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+      border-width: 2px;
+      border-style: solid;
+    }
+
+    &__line {
+      display: inline-block;
+      position: absolute;
+      width: calc(100% - 40px);
+      height: 100%;
+      top: 0;
+      left: 25px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        transform: scaleX(0);
+        transition: transform 0.7s;
+      }
+    }
+
+    &:hover {
+      .btn__line {
+        &::after {
+          transform: scaleX(1);
+        }
+      }
     }
 
     &--default {
       stroke: #fff;
       color: #fff;
+
+      &::before {
+        border-color: #fff transparent #fff #fff;
+      }
+
+      &::after {
+        border-color: #fff #fff #fff transparent;
+      }
+
+      .btn__line {
+        &::before, &::after {
+          background: #fff;
+        }
+      }
     }
 
     &--dark {
       stroke: $dark-color;
       color: $dark-color;
+
+      &::before {
+        border-color: $dark-color transparent $dark-color $dark-color;
+      }
+
+      &::after {
+        border-color: $dark-color $dark-color $dark-color transparent;
+      }
+
+      .btn__line {
+        &::before, &::after {
+          background: $dark-color;
+        }
+      }
     }
   }
 

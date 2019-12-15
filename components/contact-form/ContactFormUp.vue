@@ -1,5 +1,5 @@
 <template>
-<a class="column">
+<a href="" class="column">
   <arrow />
   up
 </a>
@@ -18,6 +18,8 @@ export default {
 
 <style lang="scss" scoped>
 .column {
+  color: inherit;
+  text-decoration: none;
   font-family: $secondary-font-bold;
   font-weight: bold;
   font-size: 18px;

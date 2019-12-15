@@ -13,12 +13,14 @@
   </div>
   <div class="form-row w100">
     <contact-form-radio
-v-for="(item, index) in options"
-:key="index"
-v-model="option"
-:value="item.value"
-name="option"
-    >{{ item.text }}</contact-form-radio>
+      v-for="(item, index) in options"
+      :key="index"
+      v-model="option"
+      :value="item.value"
+      name="option"
+    >
+      {{ item.text }}
+    </contact-form-radio>
   </div>
   <div class="form-row">
     <contact-form-input
@@ -41,13 +43,7 @@ name="option"
       <p>{{ checkboxText }}</p>
     </contact-form-checkbox>
     <div class="button-container">
-      <input
-        type="submit"
-        class="submit"
-        :value="buttonText"
-        @mouseover="buttonText = 'Go'"
-        @mouseleave="buttonText = 'Explore our process'"
-      >
+      <MainButton>Explore our process</MainButton>
     </div>
   </div>
 </form>
@@ -120,16 +116,19 @@ export default {
   flex-shrink: 0;
   flex-grow: 0;
 }
+
 .form-row {
   width: calc(50vw - 15px);
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   justify-content: space-between;
   align-items: center;
 }
+
 .w100 {
   width: 100%;
 }
+
 .submit {
   background: transparent;
   border: 1px solid #fff;
@@ -139,6 +138,7 @@ export default {
   padding: 7px 0;
   border-radius: 20px;
 }
+
 .blot {
   height: 131px;
   width: 131px;
@@ -150,16 +150,7 @@ export default {
   opacity: 0;
   transition: all .5s ease-in-out;
 }
-.button-container {
-  flex-grow: 0;
-  flex-shrink: 0;
-  height: 131px;
-  width: 190px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  background: none;
-}
+
 .button-container:hover {
   background: url('~assets/img/blot.png') center no-repeat;
 }
