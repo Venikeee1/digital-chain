@@ -31,5 +31,6 @@ export default {
     text-transform: uppercase;
     font-family: $secondary-font-bold;
     margin-bottom: 1.2em;
+    font-weight: 600;
   }
 </style>

@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import AwardsSlider from '@/components/homepage/awards/AwardsSlider'
+import AwardsSlider from './AwardsSlider'
 const data = {
   title: 'Our [[awards]]',
   description: 'We do not limit ourselves to certain business lines. We have the experience and professionals to build a custom solution and use multiple services to assist your business.',

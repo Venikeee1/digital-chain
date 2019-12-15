@@ -1,6 +1,6 @@
 <template>
   <div class="works-details">
-    <h3 class="works-details__title secondary-title">{{ details.title }}</h3>
+    <h3 class="works-details__title secondary-title" v-html="details.title"></h3>
     <div class="works-details__item">
       <span class="works-details__title">{{ staticTranslation.services }} :</span>
       <span class="works-details__description">{{ details.services }}</span>

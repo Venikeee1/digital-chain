@@ -19,7 +19,11 @@ module.exports = {
     ]
   },
   loading: { color: '#3B8070' },
-  plugins: ['~/plugins/global.js', { src: '~/plugins/swiper.js', ssr: false }],
+  plugins: [
+    '~/plugins/global.js',
+    '~plugins/scrollTo.js',
+    { src: '~/plugins/swiper.js', ssr: false }
+  ],
   build: {
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {

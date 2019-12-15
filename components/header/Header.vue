@@ -1,8 +1,8 @@
 <template>
-  <header class="header">
+  <header class="header" :class="{'header--minimized': isMinimized}">
     <div class="container">
       <div class="header__inner">
-        <AppLogo />
+        <AppLogo id="app-logo" />
         <Navigation />
         <MainButton>Contact us</MainButton>
       </div>
@@ -19,6 +19,25 @@ export default {
   components: {
     AppLogo,
     Navigation
+  },
+  data () {
+    return {
+      isMinimized: false
+    }
+  },
+  mounted () {
+    this.setIsHeaderMinimized()
+    this.addScrollAnimation()
+  },
+  methods: {
+    addScrollAnimation () {
+      window.addEventListener('scroll', () => {
+        this.setIsHeaderMinimized()
+      })
+    },
+    setIsHeaderMinimized () {
+      this.isMinimized = window.scrollY >= 10
+    }
   }
 }
 </script>
@@ -30,7 +49,14 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 65px 0 30px;
+    padding: 65px 0 20px;
+    z-index: 1000;
+    transition: background 0.4s, transform 0.4s;
+
+    &--minimized {
+      transform: translateY(-40px);
+      background: $dark-color;
+    }
 
     &__inner {
       display: flex;
