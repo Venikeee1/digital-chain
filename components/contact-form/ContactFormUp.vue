@@ -8,6 +8,7 @@
 <script>
 import Arrow from '../svg/Arrow'
 export default {
+  name: 'ContactFormUp',
   components: {
     Arrow
   }

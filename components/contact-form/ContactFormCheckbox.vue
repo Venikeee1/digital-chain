@@ -3,14 +3,14 @@
     :for="`checkbox-${value}`"
     class="label"
     :class="{
-    'checked': checked,
-    error: error
+    'checked': checked
     }"
   >
   <span
     class="checkbox"
+    :class="{error: error}"
   >
-    <checked v-if="checked"/>
+    <checked v-if="checked" />
   </span>
     <input
       :id="`checkbox-${value}`"
@@ -26,10 +26,16 @@
 <script>
 import Checked from '../svg/Checked'
 export default {
+  name: 'ContactFormCheckbox',
   components: { Checked },
+  model: {
+    prop: 'checked',
+    event: 'change'
+  },
   props: {
     value: [String],
-    checked: [Boolean]
+    checked: [Boolean],
+    name: [String]
   },
   data: function () {
     return {
@@ -38,7 +44,15 @@ export default {
   },
   methods: {
     handlerChange (e) {
-      this.$emit('change', e.target.value)
+      this.$emit('change', this.value)
+      this.verify()
+    },
+    async verify () {
+      console.log('checked1', this.checked)
+      await this.$emit('error', this.name, !this.checked)
+      console.log('checked2', this.checked)
+      this.error = !this.checked
+      console.log('checked3', this.checked)
     }
   }
 
@@ -64,5 +78,8 @@ export default {
   }
   .input {
     display: none;
+  }
+  .error {
+    border-color: orangered;
   }
 </style>

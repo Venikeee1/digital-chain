@@ -1,12 +1,12 @@
 <template>
 <label
-:for="`radio-${value}`"
-class="label"
-:class="{'checked': checked===value}"
+  :for="`radio-${value}`"
+  class="label"
+  :class="{'checked': checked === value}"
 >
   <span
-    class="checkbox"
-    :class="{'checked': checked===value}"
+    class="radio"
+    :class="{'checked': checked === value}"
   ></span>
   <input
     :id="`radio-${value}`"
@@ -21,6 +21,7 @@ class="label"
 </template>
 <script>
 export default {
+  name: 'ContactFormRadio',
   model: {
     prop: 'checked',
     event: 'change'
@@ -32,7 +33,11 @@ export default {
   },
   methods: {
     handlerChange (e) {
-      this.$emit('change', e.target.value)
+      if (this.checked !== this.value) {
+        this.$emit('change', this.value)
+      } else {
+        this.$emit('change', '')
+      }
     }
   }
 
@@ -44,30 +49,30 @@ export default {
   border: 1px solid #393939;
   box-sizing: border-box;
   border-radius: 20px;
-  padding: 6.86px;
+  padding: 7px;
   display: flex;
   color: #fff;
-  font-family: 'PFDinTextCondPro-Regular';
+  font-family: $main-font-regular;
   font-size: 14px;
 }
   .radio {
-    width: 13.72px;
-    height: 13.72px;
+    width: 14px;
+    height: 14px;
     border: 1px solid #393939;
     box-sizing: border-box;
     position: relative;
     border-radius: 50%;
-    margin-right: 5px;
+    margin-right: 10px;
   }
   .radio.checked:before {
     content: '';
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: -1.96px;
-    margin-left: -1.96px;
-    height: 3.92px;
-    width: 3.92px;
+    margin-top: -2px;
+    margin-left: -2px;
+    height: 4px;
+    width: 4px;
     border-radius: 50%;
     background: #fff;
   }

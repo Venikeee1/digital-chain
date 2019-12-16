@@ -1,5 +1,5 @@
 <template>
-<div
+<label
 class="input-container"
 :class="{
   error: error,
@@ -9,24 +9,28 @@ class="input-container"
   <input
     type="text"
     :value="value"
+    name="name"
     class="input"
     :placeholder="placeholder"
     @input="inputHandler"
     @focus="focus=true"
-    @blur="focus=false"
+    @blur="blurHandler"
+    @keyup="keyUpHandler"
   >
-</div>
+</label>
 </template>
 <script>
 export default {
+  name: 'ContactFormInput',
   model: {
     prop: 'value',
     event: 'input'
   },
   props: {
-    regExp: [String],
+    validate: [Array],
     value: [String],
-    placeholder: [String]
+    placeholder: [String],
+    name: [String]
   },
   data: function () {
     return {
@@ -37,6 +41,31 @@ export default {
   methods: {
     inputHandler (event) {
       this.$emit('input', event.target.value)
+    },
+    blurHandler () {
+      this.focus = false
+      this.verify()
+    },
+    keyUpHandler () {
+      this.error && this.verify()
+    },
+    verify () {
+      console.log('verify')
+      if (this.validate) {
+        let match = true
+        for (const rule in this.validate) {
+          console.log('rule', this.validate[rule])
+          match = this.value.match(this.validate[rule])
+          console.log('testResultError', match)
+          if (!match) {
+            this.$emit('error', this.name, true)
+            this.error = true
+            return
+          }
+        }
+        this.$emit('error', this.name, false)
+        this.error = false
+      }
     }
   }
 }
@@ -59,6 +88,9 @@ export default {
   }
   &.focus::before {
     width: 100%;
+  }
+  &.error::before {
+    border-color: orangered;
   }
 }
 .input {
