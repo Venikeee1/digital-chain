@@ -1,11 +1,6 @@
 <template>
-<form
-  action.prevent="submitHandler"
-  method="post"
-  class="form"
-  @submit.prevent="submitHandler"
->
-  <div class="form-row width-fix">
+<form action="" class="form">
+  <div class="form-row">
     <contact-form-input
       ref="name"
       v-model="name"
@@ -37,38 +32,25 @@
   <div class="form-row">
     <contact-form-input
       v-model="skype"
-      name="skype"
       placeholder="Phone number or Skype (optional)"
     />
   </div>
   <div class="form-row">
     <contact-form-input
       v-model="message"
-      name="message"
       placeholder="Type your message or question"
     />
   </div>
   <div class="form-row w100">
     <contact-form-checkbox
-      ref="agree"
       value="agree"
       :checked="agree"
-      name="agree"
       @change="handlerChangeCheckbox"
-      @error="errorHandler"
     >
       <p>{{ checkboxText }}</p>
     </contact-form-checkbox>
-    <div
-      class="button-container"
-      :class="{loading: loading}"
-    >
-      <input
-        type="submit"
-        class="submit"
-        :value="buttonText"
-        @click.prevent="submitHandler"
-      >
+    <div class="button-container">
+      <MainButton>Explore our process</MainButton>
     </div>
   </div>
 </form>
@@ -166,19 +148,22 @@ export default {
   flex-grow: 0;
   outline: none;
 }
+
 .form-row {
   width: calc(50vw - 15px);
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   justify-content: space-between;
   align-items: center;
   &:not(:first-child) {
     margin-top: 40px;
   }
 }
+
 .w100 {
   width: 100%;
 }
+
 .submit {
   background: transparent;
   border: 1px solid #fff;
@@ -189,6 +174,7 @@ export default {
   border-radius: 20px;
   outline: none;
 }
+
 .blot {
   height: 131px;
   width: 131px;
@@ -200,17 +186,8 @@ export default {
   opacity: 0;
   transition: all .5s ease-in-out;
 }
-.button-container {
-  flex-grow: 0;
-  flex-shrink: 0;
-  height: 131px;
-  width: 190px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  background: none;
-}
-.button-container.loading {
+
+.button-container:hover {
   background: url('~assets/img/blot.png') center no-repeat;
 }
 

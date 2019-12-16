@@ -1,6 +1,9 @@
 <template>
-  <div class="advantage-item d-flex text--transparent">
-    <div class="advantage-item__numeration d-flex align-center">
+  <div
+    class="advantage-item d-flex text--transparent"
+    :class="{'advantage-item--active': isActive}"
+  >
+    <div class="advantage-item__numeration d-flex align-center justify-between">
       <div class="advantage-item__icon">
         <component :is="advantageItemData.svg" />
       </div>
@@ -29,7 +32,11 @@ export default {
     TrafficSource
   },
   props: {
-    advantageItemData: Object
+    advantageItemData: Object,
+    isActive: {
+      type: Boolean,
+      default: false
+    }
   },
   computed: {
     itemNumber () {
@@ -42,25 +49,23 @@ export default {
 
 <style lang="scss" scoped>
 .advantage-item {
-  /*&:first-child {
-    .advantage-item__numeration,
-    .advantage-item__description {
-      padding-top: 0;
-    }
-  }*/
+  cursor: pointer;
+  opacity: 0.4;
+  transition: opacity 0.4s;
+  color: #fff;
 
-  &.active {
-    color: #fff;
+  &--active {
+    opacity: 1;
 
     .advantage-item__numeration {
-      opacity: 1;
+      &::before {
+        opacity: 1;
+      }
     }
   }
 
   &__index{
     font-size: 14px;
-    font-family: $secondary-font-regular;
-    transition: color 0.4s;
   }
 
   &__icon {
@@ -69,8 +74,8 @@ export default {
     justify-content: center;
     width: 44px;
     height: 44px;
-    margin-right: 35px;
-    fill: $secondary-text-color;
+    margin-right: 15px;
+    fill: #fff;
   }
 
   &__description {
@@ -81,10 +86,10 @@ export default {
   }
 
   &__numeration {
-    width: 100px;
+    max-width: 120px;
+    width: 100%;
     position: relative;
-    padding: 30px 10px 30px 0;
-    border-right: 1px solid $secondary-text-color;
+    padding: 30px 15px 30px 0;
 
     &::before {
       content: '';

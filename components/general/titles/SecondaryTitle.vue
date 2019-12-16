@@ -24,12 +24,17 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .secondary-title {
     font-size: 62px;
     line-height: 1.2;
     text-transform: uppercase;
     font-family: $secondary-font-bold;
     margin-bottom: 1.2em;
+    font-weight: 600;
+
+    @media (max-width: 1500px) {
+      font-size: 4vw;
+    }
   }
 </style>

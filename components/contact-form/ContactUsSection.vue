@@ -1,9 +1,10 @@
 <template>
-  <section>
+  <section class="contact-us-section">
     <div class="container">
       <div class="d-flex justify-between">
-        <div class="col-6">
+        <div class="contact-us-section__description col-6">
           <SecondaryTitle :text="sectionData.title" />
+          <p class="text">{{ sectionData.text }}</p>
           <div class="text-block">
             <p
               v-for="(paragraph, index) in sectionData.text"
@@ -15,7 +16,9 @@
         </div>
         <contact-form />
       </div>
+      <contact-form-up v-scroll-to="'.header'" />
     </div>
+    <contact-form-up />
   </section>
 </template>
 
@@ -42,25 +45,27 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.col-6 {
-  flex-shrink: 0;
-  flex-grow: 0;
-  width: 50%;
-  box-sizing: border-box;
-  padding-right: 4rem;
-  position: relative;
-  justify-content: space-between;
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
+  .contact-us-section {
+    padding: 180px 0 100px;
+
+    &__description {
+      padding-right: 10%;
+    }
   }
-.text {
-  font-size: 16px;
-  line-height: 30px;
-  color: #FFFFFF;
-  opacity: 0.3;
-}
-.text-block {
-  margin-top: -110px;
-}
+
+  .col-6 {
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 50%;
+  }
+
+  .text {
+    font-size: 16px;
+    line-height: 30px;
+    color: #FFFFFF;
+    opacity: 0.3;
+  }
+  .text-block {
+    margin-top: -110px;
+  }
 </style>

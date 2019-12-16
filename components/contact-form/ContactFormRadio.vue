@@ -4,10 +4,6 @@
   class="label"
   :class="{'checked': checked === value}"
 >
-  <span
-    class="radio"
-    :class="{'checked': checked === value}"
-  ></span>
   <input
     :id="`radio-${value}`"
     type="radio"
@@ -16,6 +12,10 @@
     class="input"
     @change="handlerChange"
   >
+  <span
+    class="radio"
+    :class="{'checked': checked===value}"
+  ></span>
   <slot></slot>
 </label>
 </template>
@@ -55,6 +55,7 @@ export default {
   font-family: $main-font-regular;
   font-size: 14px;
 }
+
   .radio {
     width: 14px;
     height: 14px;
@@ -64,6 +65,7 @@ export default {
     border-radius: 50%;
     margin-right: 10px;
   }
+
   .radio.checked:before {
     content: '';
     position: absolute;
@@ -78,5 +80,8 @@ export default {
   }
   .input {
     display: none;
+    &:checked+.radio {
+      background: #fff;
+    }
   }
 </style>

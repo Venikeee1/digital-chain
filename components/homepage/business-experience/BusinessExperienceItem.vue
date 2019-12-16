@@ -55,7 +55,7 @@ export default {
 
   &__number {
     display: inline-block;
-    font-family: $secondary-font-regular;
+    font-family: $secondary-font-thin;
     font-size: 36px;
     color: #fff;
     margin-right: 40px;
