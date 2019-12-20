@@ -71,7 +71,7 @@ export default {
       left: 0;
       width: 100%;
       height: 100%;
-      /*background: url(~assets/img/circle-curve.png) center no-repeat;*/
+      background: url(~assets/img/circle-curve.png) center no-repeat;
       background-size: contain;
     }
 

@@ -78,7 +78,7 @@ export default {
       left: 0;
       width: 100%;
       height: 100%;
-      /*background: url(~assets/img/circle-shape.png) center 15% no-repeat;*/
+      background: url(~assets/img/circle-shape.png) center 15% no-repeat;
       background-size: contain;
     }
   }
