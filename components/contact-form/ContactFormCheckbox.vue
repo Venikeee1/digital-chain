@@ -61,9 +61,16 @@ export default {
 
 <style lang="scss" scoped>
   .label {
-    font-size: 16px;
+    font-size: 13px;
     display: flex;
     align-items: center;
+    margin-bottom: 27px;
+    @media only screen and (min-width: 768px){
+      margin-bottom: 38px;
+    }
+    @media only screen and (min-width: 1024px){
+      font-size: 16px;
+    }
   }
   .checkbox {
     width: 17px;

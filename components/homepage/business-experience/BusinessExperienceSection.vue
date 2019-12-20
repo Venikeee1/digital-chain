@@ -1,11 +1,11 @@
 <template>
 <section class="business-experience">
   <div class="business-experience__inner">
-    <img
+    <!--<img
       src="~assets/img/b2c.png"
       alt=""
       class="business-experience__bg-img"
-    >
+    >-->
     <div class="container">
       <div class="d-flex justify-between">
         <div class="business-experience__heading col-xl-5">
@@ -71,7 +71,7 @@ export default {
       left: 0;
       width: 100%;
       height: 100%;
-      background: url(~assets/img/circle-curve.png) center no-repeat;
+      /*background: url(~assets/img/circle-curve.png) center no-repeat;*/
       background-size: contain;
     }
 

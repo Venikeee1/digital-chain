@@ -1,6 +1,6 @@
 <template>
 <form action="" class="form">
-  <div class="form-row">
+  <div class="form-row width-fix">
     <contact-form-input
       ref="name"
       v-model="name"
@@ -19,6 +19,9 @@
     />
   </div>
   <div class="form-row w100">
+    <p class="choose">{{ choose }}</p>
+  </div>
+  <div class="form-row w100 wrap">
     <contact-form-radio
       v-for="(item, index) in options"
       :key="index"
@@ -41,7 +44,7 @@
       placeholder="Type your message or question"
     />
   </div>
-  <div class="form-row w100">
+  <div class="form-row w100 wrap-fix">
     <contact-form-checkbox
       value="agree"
       :checked="agree"
@@ -60,6 +63,7 @@
 import ContactFormInput from './ContactFormInput'
 import ContactFormRadio from './ContactFormRadio'
 import ContactFormCheckbox from './ContactFormCheckbox'
+const choose = 'Choose one of our services (optional)'
 export default {
   name: 'ContactForm',
   components: {
@@ -69,6 +73,7 @@ export default {
   },
   data: function () {
     return {
+      choose,
       name: '',
       email: '',
       skype: '',
@@ -143,20 +148,32 @@ export default {
 
 <style lang="scss" scoped>
 .form {
-  width: 50%;
+  width: 100%;
   flex-shrink: 0;
   flex-grow: 0;
   outline: none;
+  @media only screen and (min-width: $xl ){
+    width: 50%;
+  }
 }
-
 .form-row {
-  width: calc(50vw - 15px);
+  @media only screen and (min-width: $xl ){
+    width: 50vw;
+  }
+  width: 100vw;
+  /*width: 100%;*/
   display: flex;
   margin-bottom: 40px;
   justify-content: space-between;
   align-items: center;
   &:not(:first-child) {
     margin-top: 40px;
+  }
+  &.wrap {
+  @media only screen and (max-width: $md) {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+   }
   }
 }
 
@@ -191,10 +208,32 @@ export default {
   background: url('~assets/img/blot.png') center no-repeat;
 }
 
-.width-fix :first-child {
-  width: 364px;
-  flex-grow: 0;
-  flex-shrink: 0;
-  margin-right: 24px;
+.width-fix {
+  flex-wrap: wrap;
+  @media only screen and (min-width: $lg){
+    flex-wrap: nowrap;
+  }
+  & :first-child {
+  width: 100%;
+  @media only screen and (min-width: $lg){
+    flex-basis: 364px;
+    flex-shrink: 1;
+    margin-right: 24px;
+  }
+}
+}
+.wrap-fix {
+  display: block;
+  width: 100%;
+  text-align: center;
+   @media only screen and (min-width: $sm){
+     width: auto;
+   }
+  @media only screen and (min-width: $md){
+    text-align: left;
+  }
+  @media only screen and (min-width: $lg){
+    display: flex;
+  }
 }
 </style>

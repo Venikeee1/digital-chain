@@ -54,6 +54,9 @@ export default {
   color: #fff;
   font-family: $main-font-regular;
   font-size: 14px;
+  @media only screen and (max-width: $md) {
+    margin: 10px 10px 10px 0;
+  }
 }
 
   .radio {

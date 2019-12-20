@@ -101,5 +101,6 @@ export default {
   width: 100%;
   max-width: 500px;
   outline: none;
+  min-width: 300px;
 }
 </style>
